@@ -1,0 +1,15 @@
+<form enctype="multipart/form-data" action="/blog/posts/" method="post">
+    {% csrf_token %}
+    <input type="text" maxlength="50" name="title">
+   <input type="text" maxlength="300" name="content">
+    <label for="myfile">Select a file:</label>
+<input type="file"  name="image">
+    <button type="submit">Add Post</button>
+</form>
+
+{% for post in data %}
+    <img style="height: 50%;width:50%" src='{{ post.image}}' alt="error">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+
+{% endfor %}
