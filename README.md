@@ -1,0 +1,1 @@
+# SimpleBlogusing RESI API
